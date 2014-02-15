@@ -74,13 +74,20 @@ Template.play.measureButtons = function () {
 	return Session.get('measureButtons') || [];
 };
 
-function test(y)
+function secondlyUpdate(y, fn)
 {
-	console.log(y);
+	console.log("yolo");
+	console.log(worldState);
+	console.log(worldStateFns);
+
+	if (worldStateFns && worldStateFns.updateState) {
+		worldStateFns.updateState();
+	}
+	// fn();
 }
 
 Meteor.setInterval(function() {
-	test("yolo");
+	secondlyUpdate("yolo");
 }, 1000);
 
 // LOTS OF HAX

@@ -5957,10 +5957,11 @@ getKPI = function getKPI (measureId) {
 }
 
 updateState = function updateState () {
-
 	depleteState();
 	updateResource();
-}
+
+	Session.set('lastUpdate', new Date());
+};
 
 depleteState = function depleteState() {
 	var healthMap = {};
@@ -6029,3 +6030,7 @@ complexify = function complexify (saveState) {
 	}
 //	console.log(totValChanged);
 }
+
+worldStateFns = {
+	updateState: updateState
+};
