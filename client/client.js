@@ -11,6 +11,10 @@ Router.map(function () {
 	this.route('agency-signup', {
 		path: '/agency-signup'
 	});
+
+	this.route('play', {
+		path: '/play'
+	});
 });
 
 if (Meteor.isClient) {
