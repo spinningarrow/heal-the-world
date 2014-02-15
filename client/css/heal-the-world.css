@@ -134,3 +134,11 @@ h5 {
 #vmap {
 	margin-top: 2em;
 }
+
+footer.footer {
+    line-height: 4em;
+    text-align: center;
+    font-size: small;
+    border-top: 1px solid #eee;
+   	margin-top: 2em;
+}
