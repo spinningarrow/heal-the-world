@@ -18,6 +18,15 @@ Template.play.measureButtons = function () {
 	return Session.get('measureButtons') || [{ name: 'whatevs' }];
 };
 
+function test(y)
+{
+	console.log(y);
+}
+
+Meteor.setInterval(function() {
+	test("yolo");
+}, 1000);
+
 Template.play.events({
 	'click #progress-social': function () {
 		Session.set('measureButtons', [
