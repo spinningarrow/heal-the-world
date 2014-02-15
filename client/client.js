@@ -23,85 +23,77 @@ Router.map(function () {
 	});
 });
 
-if (Meteor.isClient) {
 
-	Template.layout.events({
-		'click #logout': function () {
-			Meteor.logout();
-			Router.go('index');
-		}
-	});
+Template.layout.events({
+	'click #logout': function () {
+		Meteor.logout();
+		Router.go('index');
+	}
+});
 
-	Template.index.events({
-		'click #agency-signup': function () {
+Template.index.events({
+	'click #agency-signup': function () {
 
-			if (!Meteor.user()) {
-				Meteor.loginWithFacebook(function (error) {
+		if (!Meteor.user()) {
+			Meteor.loginWithFacebook(function (error) {
 
-					if (error) {
+				if (error) {
 
-						console.log('Facebook login error occurred.');
-						return;
-					}
+					console.log('Facebook login error occurred.');
+					return;
+				}
 
-					if (Meteor.user().profile && !Meteor.user().profile.role) {
+				if (Meteor.user().profile && !Meteor.user().profile.role) {
 
-						Meteor.users.update({ _id: Meteor.userId() }, {
-							$set: {
-								'profile.role': 'agency'
-							}
-						});
-					}
+					Meteor.users.update({ _id: Meteor.userId() }, {
+						$set: {
+							'profile.role': 'agency'
+						}
+					});
+				}
 
-					Router.go('/agency-signup');
-				});
-			} else {
 				Router.go('/agency-signup');
-			}
-
-		},
-
-		'click #play': function () {
-			console.log('Play clicked');
+			});
+		} else {
+			Router.go('/agency-signup');
 		}
+
+	},
+
+	'click #play': function () {
+		console.log('Play clicked');
+	}
+});
+
+Template.agencySignup.formData = function () {
+	var agency = Agencies.findOne({
+		owner: Meteor.userId()
 	});
 
-	Template.agencySignup.formData = function () {
-		var agency = Agencies.findOne({
-			owner: Meteor.userId()
+	return (agency ? agency.data : {});
+};
+
+Template.agencySignup.events({
+	'submit #agency-form': function (event, template) {
+		// event.preventDefault();
+
+		var formData = {
+			bio: template.find('#bio').value,
+			website: template.find('#website').value,
+			facebook: template.find('#facebook').value,
+			problemTags: {
+				education: template.find('#education').checked,
+				health: template.find('#health').checked,
+				social: template.find('#social').checked,
+				environment: template.find('#environment').checked
+			}
+		};
+
+		Agencies.insert({
+			owner: Meteor.userId(),
+			data: formData
 		});
 
-		return (agency ? agency.data : {});
-	};
-
-	Template.agencySignup.events({
-		'submit #agency-form': function (event, template) {
-			// event.preventDefault();
-
-			var formData = {
-				bio: template.find('#bio').value,
-				website: template.find('#website').value,
-				facebook: template.find('#facebook').value,
-				problemTags: {
-					education: template.find('#education').checked,
-					health: template.find('#health').checked,
-					social: template.find('#social').checked,
-					environment: template.find('#environment').checked
-				}
-			};
-
-			Agencies.insert({
-				owner: Meteor.userId(),
-				data: formData
-			});
-
-			console.log('form submitted');
-		}
-	});
-}
-
-if (Meteor.isServer) {
-	Meteor.startup(function () {
-		// code to run on server at startup
-	});
-}
+		console.log('form submitted');
+	}
+});
