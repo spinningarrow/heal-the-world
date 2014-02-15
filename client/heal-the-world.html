@@ -7,31 +7,38 @@
 
 <template name="layout">
 	<div class="container">
-		<h1>Heal the World</h1>
+		<h1><a href="/">Heal the World</a></h1>
+		{{#if currentUser}}
+			<p>
+				{{currentUser.profile.name}} | Role: {{currentUser.profile.role}} |
+				<button id="logout" class="btn btn-danger">Sign out</button>
+			</p>
+		{{/if}}
+		{{!loginButtons}}
 		{{yield}}
 	</div>
 </template>
 
 <template name="index">
-	<a href="/agency-signup" id="agency-signup" class="btn btn-default">Agency Signup</a>
+	<button href="/agency-signup" id="agency-signup" class="btn btn-default">Agency Signup</button>
 	<a href="/play" id="play" class="btn btn-primary">Play</a>
 </template>
 
-<template name="agency-signup">
-	<form role="form">
+<template name="agencySignup">
+	<form id="agency-form" role="form">
 		<div class="form-group">
 			<label for="bio">Bio</label>
-			<textarea id="bio" class="form-control" rows="3" placeholder="Tell us a little about yourself"></textarea>
+			<textarea id="bio" class="form-control" rows="3" placeholder="Tell us a little about yourself">{{formData.bio}}</textarea>
 		</div>
 
 		<div class="form-group">
 			<label for="website">Website URL</label>
-			<input type="text" id="website" class="form-control" placeholder="Website URL">
+			<input type="text" id="website" class="form-control" placeholder="Website URL" value="{{formData.website}}">
 		</div>
 
 		<div class="form-group">
 			<label for="facebook">Facebook Page URL</label>
-			<input type="text" id="facebook" class="form-control" placeholder="Facebook Page URL">
+			<input type="text" id="facebook" class="form-control" placeholder="Facebook Page URL" value="{{formData.facebook}}">
 		</div>
 
 		<div class="form-group">
@@ -39,7 +46,7 @@
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" value="education">
+					<input type="checkbox" id="education" value="education">
 					Education
 				</label>
 			</div>
@@ -47,21 +54,21 @@
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" value="health">
+					<input type="checkbox" id="health" value="health">
 					Health and Sanitation
 				</label>
 			</div>
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" value="social">
+					<input type="checkbox" id="social" value="social">
 					Social Equality
 				</label>
 			</div>
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" value="environment">
+					<input type="checkbox" id="environment" value="environment">
 					Environment
 				</label>
 			</div>
