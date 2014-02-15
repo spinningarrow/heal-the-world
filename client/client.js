@@ -27,6 +27,14 @@ Router.map(function () {
 	this.route('play', {
 		path: '/play',
 		before: function () {
+			if (!Meteor.user() || Meteor.user().profile.role !== 'player') {
+				// render the login template but keep the url in the browser the same
+				this.render('index');
+
+				// stop the rest of the before hooks and the action function
+				this.stop();
+			}
+
 			deferred1 = $.getScript('jquery.vmap.js');
 			deferred2 = $.getScript('jquery.vmap.world.js');
 			deferred3 = $.getScript('jquery.vmap.un_regions.js');
