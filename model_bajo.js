@@ -6464,7 +6464,7 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 }
 
 getMessage = function getMessage(measureId, regionId) {
-	var region = getRegion(regionId);
+	var region = getRegionName(regionId);
 	switch(measureId){
 		case 0:
 			return "Children in " + region + " now have better access to education! Sharpened pencils, sharpened minds!";
@@ -6481,7 +6481,7 @@ getMessage = function getMessage(measureId, regionId) {
 		case 6:
 			return "Cleaner water, cheaper electricity, more housing! Celebrations seen all around " + region;
 		case 7:
-			return "" + region + "improves efforts to research and distribute vaccines.";
+			return "" + region + " improves efforts to research and distribute vaccines.";
 		case 8:
 			return "Governments of " + region + " increase the drive to empower women, by awareness and legislature.";
 		case 9:
@@ -6502,7 +6502,7 @@ getMessage = function getMessage(measureId, regionId) {
 	}
 }
 
-getRegion = function getRegion(regionId){
+getRegionName = function getRegion(regionId){
 	switch(regionId){
 		case 0: return "Caribbean";
 		case 1: return "Central America";
