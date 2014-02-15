@@ -57,7 +57,8 @@ Router.map(function () {
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
 					map: 'world_en',
-					backgroundColor: '#444444',
+					// backgroundColor: '#444444',
+					backgroundColor: '#fff',
 					color: '#0000000',
 					hoverOpacity: 0.2,
 					selectedColor: '#666666',

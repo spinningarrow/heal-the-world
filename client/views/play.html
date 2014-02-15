@@ -3,20 +3,32 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			{{#constant}}
-			<div id="vmap"  style="height:400px;"></div>
-			{{/constant}}
+			<div>
+				<button id="start" class="btn btn-sm btn-success {{#if isGamePlaying}}hidden{{/if}}"><span class="glyphicon glyphicon-play"></span> Start</button>
 
-			<div class = "well">
+				<button id="pause" class="btn btn-sm btn-primary {{#unless isGamePlaying}}hidden{{/unless}}"><span class="glyphicon glyphicon-pause"></span> Pause</button>
+
+				<button id="restart" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-repeat"></span> Reset</button>
+
+				<div class="game-status pull-right">
+					Resource <span class="badge">{{resource}}</span>
+					XP <span class="badge">{{xp}}</span>
+					World Health <span class="badge">{{world_health}}</span>
+					Current Region <span class="badge">{{current_region}}</span>
+				</div>
+			</div>
+
+		{{#constant}}
+			<div id="vmap" style="height:400px;"></div>
+		{{/constant}}
+		<div class = "well">
 				{{tickerMessage}}
 			</div>
 		</div>
-		<div class="col-md-4">
-			<button id="start" class="btn btn-primary {{#if isGamePlaying}}hidden{{/if}}">Start/Resume Game</button>
-			<button id="pause" class="btn btn-warning {{#unless isGamePlaying}}hidden{{/unless}}">Pause Game</button>
-
+		<div class="col-md-4 well">
 			<div>
-				<div class="progress-links well">
+				<h5>Progress Indicators</h5>
+				<div class="progress-links">
 					<h6>Social Equality</h6>
 					<div id="progress-social" class="progress progress-striped">
 						<div class="progress-bar progress-bar-{{healthGradeBS social}}" style="width: {{social}};">{{social}}</div>
@@ -42,8 +54,8 @@
 				</div>
 			</div>
 			<div>
-				<h5> Measures </h5>
-				<div class="well">
+				<h5>Measures</h5>
+				<div class="">
 					{{#each measureButtons}}
 						<button id="measure-{{this.id}}" class="btn btn-default btn-sm btn-block" {{#unless isGamePlaying}}disabled{{/unless}}>{{this.name}}</button>
 					{{/each}}

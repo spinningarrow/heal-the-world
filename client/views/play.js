@@ -98,7 +98,24 @@ Template.play.isGamePlaying = function () {
 
 Template.play.tickerMessage = function () {
 	return Session.get('implementationResult') || 'Default message, yo!';
-}
+};
+
+Template.play.resource = function () {
+	return worldState.resource;
+};
+
+Template.play.xp = function () {
+	return 1;
+	// return worldState.xp();
+};
+
+Template.play.world_health = function () {
+	return Math.round(worldState.worldHealth());
+};
+
+Template.play.current_region = function () {
+	return regionMap[Session.get('currentRegion')].name;
+};
 
 // ======== Events ========
 var playEventsMap = {
@@ -122,6 +139,18 @@ var playEventsMap = {
 		} });
 
 		Session.set('isGamePlaying', false);
+	},
+
+	'click #restart': function () {
+		// Stop game
+		Session.set('isGamePlaying', false);
+
+		if (gameTicker) {
+			Meteor.clearInterval(gameTicker);
+		}
+
+		// Reset game state
+		complexify(defaultWorld);
 	},
 
 	'click #progress-social': function () {

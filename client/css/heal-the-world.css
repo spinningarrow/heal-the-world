@@ -1,6 +1,24 @@
 /* CSS declarations go here */
+h5 {
+	text-transform: uppercase;
+}
+
+.header {
+	height: 100px;
+}
+
+.profile-info {
+	margin-top: 1em;
+}
+
+.profile-picture {
+	border-radius: 4px;
+	margin-right: 0.5em;
+}
+
 .progress-links .progress {
 	cursor: pointer;
+	margin-bottom: 10px;
 }
 
 .bs-example {
@@ -96,3 +114,13 @@
 .bs-example>textarea.form-control { resize: vertical }
 .bs-example>.list-group { max-width: 400px }
 .bs-example .navbar:last-child { margin-bottom: 0 }
+
+}
+
+.game-status {
+	line-height: 2;
+}
+
+#vmap {
+	margin-top: 2em;
+}
