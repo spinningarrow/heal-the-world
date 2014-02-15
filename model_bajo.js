@@ -5956,10 +5956,11 @@ getKPI = function getKPI (measureId) {
 }
 
 updateState = function updateState () {
-
 	depleteState();
 	updateResource();
-}
+
+	Session.set('lastUpdate', new Date());
+};
 
 depleteState = function depleteState() {
 	for(var regionIndex in worldState.regions){
@@ -5998,3 +5999,7 @@ simplify = function simplify() {
 		world.push(region);
 	}
 }
+
+worldStateFns = {
+	updateState: updateState
+};
