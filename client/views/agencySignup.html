@@ -1,0 +1,53 @@
+<template name="agencySignup">
+	<form id="agency-form" role="form">
+		<div class="form-group">
+			<label for="bio">Bio</label>
+			<textarea id="bio" class="form-control" rows="3" placeholder="Tell us a little about yourself">{{formData.bio}}</textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="website">Website URL</label>
+			<input type="text" id="website" class="form-control" placeholder="Website URL" value="{{formData.website}}">
+		</div>
+
+		<div class="form-group">
+			<label for="facebook">Facebook Page URL</label>
+			<input type="text" id="facebook" class="form-control" placeholder="Facebook Page URL" value="{{formData.facebook}}">
+		</div>
+
+		<div class="form-group">
+			<label>Problem tags</label>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="education" value="education" {{#if formData.problemTags.education}}checked{{/if}}>
+					Education
+				</label>
+			</div>
+
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="health" value="health" {{#if formData.problemTags.health}}checked{{/if}}>
+					Health and Sanitation
+				</label>
+			</div>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="social" value="social" {{#if formData.problemTags.social}}checked{{/if}}>
+					Social Equality
+				</label>
+			</div>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="environment" value="environment" {{#if formData.problemTags.environment}}checked{{/if}}>
+					Environment
+				</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</template>

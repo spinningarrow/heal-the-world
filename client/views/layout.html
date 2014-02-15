@@ -1,0 +1,13 @@
+<template name="layout">
+	<div class="container">
+		<h1><a href="/">Heal the World</a></h1>
+		{{#if currentUser}}
+			<p>
+				{{currentUser.profile.name}} | Role: {{currentUser.profile.role}} |
+				<button id="logout" class="btn btn-danger">Sign out</button>
+			</p>
+		{{/if}}
+		{{!loginButtons}}
+		{{yield}}
+	</div>
+</template>
