@@ -1,5 +1,5 @@
 // Default region
-Session.set('currentRegion', 'easternAsia');
+Session.set('currentRegionIndex', 12);
 
 var kpis = {
 	'social': true,
@@ -46,6 +46,30 @@ for (var kpi in kpis) {
 // 	return Session.get('health') || '50%';
 // };
 
+Template.play.lastUpdate = function () {
+	return Session.get('lastUpdate');
+};
+
+Template.play.social = function () {
+	var currentRegionIndex = Session.get('currentRegionIndex') || 0;
+	return Math.round(worldState.regions[currentRegionIndex].kpis[0].progress() * 100) + '%';
+};
+
+Template.play.health = function () {
+	var currentRegionIndex = Session.get('currentRegionIndex') || 0;
+	return Math.round(worldState.regions[currentRegionIndex].kpis[1].progress() * 100) + '%';
+};
+
+Template.play.environment = function () {
+	var currentRegionIndex = Session.get('currentRegionIndex') || 0;
+	return Math.round(worldState.regions[currentRegionIndex].kpis[2].progress() * 100) + '%';
+};
+
+Template.play.literacy = function () {
+	var currentRegionIndex = Session.get('currentRegionIndex') || 0;
+	return Math.round(worldState.regions[currentRegionIndex].kpis[3].progress() * 100) + '%';
+};
+
 Template.play.measureButtons = function () {
 	return Session.get('measureButtons') || [];
 };
@@ -59,40 +83,51 @@ Meteor.setInterval(function() {
 	test("yolo");
 }, 1000);
 
-Template.play.events({
+// LOTS OF HAX
+// This will break
+var measuresList = [
+	{ id: 0, name: 'Build a school' },
+	{ id: 1, name: 'Build a community college' },
+	{ id: 2, name: 'Invest in free adult education' },
+	{ id: 3, name: 'Build public toilets' },
+	{ id: 4, name: 'Build a hospital' },
+	{ id: 5, name: 'Affordable healthcare' },
+	{ id: 6, name: 'Improve the condition of basic amenities' },
+	{ id: 7, name: 'Research disease vaccines' },
+	{ id: 8, name: 'Promote women empowerment' },
+	{ id: 9, name: 'Increase police coverage' },
+	{ id: 10, name: 'Improve welfare subsidies' },
+	{ id: 11, name: 'Increase civic rights' },
+	{ id: 12, name: 'Cut carbon emissions' },
+	{ id: 13, name: 'Increase forest cover' },
+	{ id: 14, name: 'Restore natural habitats' },
+	{ id: 15, name: 'Invest in green technology' }
+];
+
+var playEventsMap = {
 	'click #progress-social': function () {
-		Session.set('measureButtons', [
-			{ name: 'Promote women empowerment' },
-			{ name: 'Increase police coverage' },
-			{ name: 'Improve welfare subsidies' },
-			{ name: 'Increase civic rights' }
-		]);
+		Session.set('measureButtons', measuresList.slice(8, 12));
 	},
 
 	'click #progress-literacy': function () {
-		Session.set('measureButtons', [
-			{ name: 'Build a school' },
-			{ name: 'Build a community college' },
-			{ name: 'Invest in free adult education' }
-		]);
+		Session.set('measureButtons', measuresList.slice(0, 3));
 	},
 
 	'click #progress-health': function () {
-		Session.set('measureButtons', [
-			{ name: 'Build public toilets' },
-			{ name: 'Build a hospital' },
-			{ name: 'Affordable healthcare' },
-			{ name: 'Reasearch disease vaccines' },
-			{ name: 'Improve the condition of basic amenities' }
-		]);
+		Session.set('measureButtons', measuresList.slice(3, 8));
 	},
 
 	'click #progress-environment': function () {
-		Session.set('measureButtons', [
-			{ name: 'Cut carbon emissions' },
-			{ name: 'Increase forest cover' },
-			{ name: 'Restore natural habitats' },
-			{ name: 'Invest in green technology' }
-		]);
+		Session.set('measureButtons', measuresList.slice(12, 16));
 	}
-});
+};
+
+for (var i = 0; i < measuresList.length; i++) {
+	(function (measureId) {
+		playEventsMap['click #measure-' + measureId] = function () {
+			implementMeasure(Session.get('currentRegionIndex'), measureId);
+		};
+	})(i);
+}
+
+Template.play.events(playEventsMap);

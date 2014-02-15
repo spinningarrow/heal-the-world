@@ -47,7 +47,9 @@ Router.map(function () {
 				console.log('Region: ' + (regionMap[code] || 'not in list'));
 				// Session.set('social', '10%'); // temp hack
 				// Fetch data from collection (state engine)
-				Session.set('currentRegion', regionMap[code]);
+				// Session.set('currentRegion', regionMap[code]);
+				Session.set('currentRegion', region.code);
+				Session.set('currentRegionIndex', region.code);
 
 				// for (var kpi in kpis) {
 				// 	Session.set(kpi, Math.round(_.reduce(miniBajo.regions[regionKey].kpis[kpi].measures, function (memo, measure) {
@@ -67,6 +69,7 @@ Router.map(function () {
 					showTooltip: true,
 					scaleColors: ['#C8EEFF', '#006491'],
 					normalizeFunction: 'polynomial',
+					selectedRegion: 'us',
 					onRegionClick: regionEventFunction,
 					// onRegionOver: regionEventFunction,
 					onRegionOut: function () {
