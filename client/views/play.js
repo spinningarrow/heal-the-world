@@ -1,21 +1,53 @@
-Template.play.social = function () {
-	return Session.get('social') || '50%';
+// Default region
+Session.set('currentRegion', 'easternAsia');
+
+var kpis = {
+	'social': true,
+	'health': true,
+	'environment': true,
+	'literacy': true
 };
 
-Template.play.literacy = function () {
-	return Session.get('literacy') || '50%';
-};
+function calculateKpi(kpi) {
+	var regionKey = Session.get('currentRegion');
 
-Template.play.environment = function () {
-	return Session.get('environment') || '50%';
-};
+	return Math.round(_.reduce(miniBajo.regions[regionKey].kpis[kpi].measures, function (memo, measure) {
+		return memo + measure.currVal;
+	}, 0) * 10) + '%';
+}
 
-Template.play.health = function () {
-	return Session.get('health') || '50%';
-};
+for (var kpi in kpis) {
+	Template.play[kpi] = calculateKpi.bind(null, kpi);
+}
+
+// Template.play.social = function () {
+// 	// return Session.get('social') || '50%';
+
+// 	var regionKey = Session.get('currentRegion');
+
+// 	return Math.round(_.reduce(miniBajo.regions[regionKey].kpis.social.measures, function (memo, measure) {
+// 		return memo + measure.currVal;
+// 	}, 0) * 10) + '%';
+
+// 	// for (var kpi in kpis) {
+// 	// 	Session.set(kpi, ;
+// 	// }
+// };
+
+// Template.play.literacy = function () {
+// 	return Session.get('literacy') || '50%';
+// };
+
+// Template.play.environment = function () {
+// 	return Session.get('environment') || '50%';
+// };
+
+// Template.play.health = function () {
+// 	return Session.get('health') || '50%';
+// };
 
 Template.play.measureButtons = function () {
-	return Session.get('measureButtons') || [{ name: 'whatevs' }];
+	return Session.get('measureButtons') || [];
 };
 
 function test(y)

@@ -36,12 +36,25 @@ Router.map(function () {
 			var regionEventFunction = function (event, code, region) {
 				var region = getRegion(code);
 
+
 				console.log (region.code);
 
 				// console.log(getRegion(code).regionCode);
 				Session.set('social', '10%'); // temp hack
+				console.log(getRegion(code).regionCode);
+				// Session.set('social', '10%'); // temp hack
+
+				console.log('Region: ' + (regionMap[code] || 'not in list'));
+				// Session.set('social', '10%'); // temp hack
 				// Fetch data from collection (state engine)
-			}
+				Session.set('currentRegion', regionMap[code]);
+
+				// for (var kpi in kpis) {
+				// 	Session.set(kpi, Math.round(_.reduce(miniBajo.regions[regionKey].kpis[kpi].measures, function (memo, measure) {
+				// 		return memo + measure.currVal;
+				// 	}, 0) * 10) + '%');
+				// }
+			};
 
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
@@ -55,12 +68,12 @@ Router.map(function () {
 					scaleColors: ['#C8EEFF', '#006491'],
 					normalizeFunction: 'polynomial',
 					onRegionClick: regionEventFunction,
-					onRegionOver: regionEventFunction,
+					// onRegionOver: regionEventFunction,
 					onRegionOut: function () {
 						// TODO
 					}
 				});
-			})
+			});
 		}
 	});
 });

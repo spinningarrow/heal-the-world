@@ -1,4 +1,5 @@
 Agencies = new Meteor.Collection('agencies');
+Worlds = new Meteor.Collection('worlds');
 
 Meteor.users.allow({
 	update: function (userId, doc, fieldNames, modifier) {
