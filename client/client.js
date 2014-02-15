@@ -44,7 +44,7 @@ Router.map(function () {
 				console.log(getRegion(code).regionCode);
 				// Session.set('social', '10%'); // temp hack
 
-				console.log('Region: ' + (regionMap[code] || 'not in list'));
+				// console.log('Region: ' + (regionMap[code] || 'not in list'));
 				// Session.set('social', '10%'); // temp hack
 				// Fetch data from collection (state engine)
 				// Session.set('currentRegion', regionMap[code]);
@@ -57,6 +57,8 @@ Router.map(function () {
 				// 	}, 0) * 10) + '%');
 				// }
 			};
+
+
 
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
@@ -76,6 +78,12 @@ Router.map(function () {
 						// TODO
 					}
 				});
+
+				invertedRegionMap = _.clone(regionMap);
+				_.each(invertedRegionMap, function (value, key, list) {
+					invertedRegionMap[key] = value.code;
+				});
+				invertedRegionMap = _.invert(invertedRegionMap);
 			});
 		}
 	});

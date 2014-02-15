@@ -65,7 +65,7 @@ worldState = {
 				var kpi = this.kpis[kpiIndex];
 				kpi.depletion = depl;
 			}
-			return this.healthRating() * 0.033;
+			return (1/this.healthRating()) * 0.033;
 		},
 		"kpis":[{
 			"name": "S",
@@ -5963,16 +5963,26 @@ updateState = function updateState () {
 }
 
 depleteState = function depleteState() {
+	var healthMap = {};
 	for(var regionIndex in worldState.regions){
 		var region = worldState.regions[regionIndex];
 		for(var kpiIndex in region.kpis){
 			var kpi = region.kpis[kpiIndex];
 			for(var measureIndex in kpi.measures){
 				var measure = kpi.measures[measureIndex];
-				measure.currVal -= region.depletion();
+				if(measure.currVal - region.depletion() > 0.0){
+					measure.currVal -= region.depletion();
+				} else {
+					measure.currVal = 0.0;
+				}
+
 			}
 		}
+
+		healthMap[region.name] = region.health();
 	}
+
+	updateColours(healthMap);
 }
 
 updateResource = function updateResource () {
