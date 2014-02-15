@@ -5916,7 +5916,7 @@ worldState = {
 
 
 /*--------------------------------------------------------
-				GAME ENGINGE FUNCTIONS
+				GAME ENGINE FUNCTIONS
 ---------------------------------------------------------*/
 
 implementMeasure = function implementMeasure (regionId, measureId) {
@@ -5931,10 +5931,11 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 
 			if(worldState.resource >= measure.cost()) {
 				worldState.resource -= measure.cost();
-				//console.log(measure.currVal);
-				measure.currVal += 0.1;
-				//console.log(measure.currVal);
-				//console.log("Implement " + measure.name + " in " + worldState.regions[regionId].name + " coming under " + kpi + " at a cost of " + measure.cost());
+				if(measure.currVal < 0.9){
+					measure.currVal += 0.1;
+				} else {
+					measure.currVal = 1.0;
+				}
 
 			}
 		}
@@ -5983,18 +5984,38 @@ updateResource = function updateResource () {
 
 //WIP from below here
 simplify = function simplify() {
-	world = [];
+	var saveState = {
+		"resource":worldState.resource
+	}
+	var values = [];
 	for(var regionIndex in worldState.regions){
-		var region = [];
 		var currRegion = worldState.regions[regionIndex];
 		for(var kpiIndex in currRegion.kpis){
-			var kpi = [];
 			var currKPI = currRegion.kpis[kpiIndex];
-			for(var measure in currKPI.measures){
-				kpi.push(currKPI.measures[measureIndex].currVal);
+			for(var measureIndex in currKPI.measures){
+				values.push(currKPI.measures[measureIndex].currVal);
 			}
-			region.push(kpi);
 		}
-		world.push(region);
 	}
+	saveState.worldState = values;
+	return saveState;
+}
+
+complexify = function complexify (saveState) {
+		var totValChanged = 0;
+	worldState.resource = saveState.resource;
+	var values = saveState.worldState;
+//	console.log(values);
+	for(var regionIndex in worldState.regions) {
+		var region = worldState.regions[regionIndex];
+		for(var kpiIndex in region.kpis){
+			var kpi = region.kpis[kpiIndex];
+			for(var measureIndex in kpi.measures){
+//				console.log(kpi.measures[measureIndex].currVal + " " + values[totValChanged]);
+				kpi.measures[measureIndex].currVal = values[totValChanged];
+				totValChanged++;
+			}
+		}
+	}
+//	console.log(totValChanged);
 }
