@@ -42,31 +42,11 @@ Router.map(function () {
 		after: function () {
 
 			var regionEventFunction = function (event, code, region) {
-				var region = getRegion(code);
+				var regionObj = getRegion(code);
 
-
-				console.log (region.code);
-
-				// console.log(getRegion(code).regionCode);
-				Session.set('social', '10%'); // temp hack
-				console.log(getRegion(code).regionCode);
-				// Session.set('social', '10%'); // temp hack
-
-				// console.log('Region: ' + (regionMap[code] || 'not in list'));
-				// Session.set('social', '10%'); // temp hack
-				// Fetch data from collection (state engine)
-				// Session.set('currentRegion', regionMap[code]);
-				Session.set('currentRegion', region.regionCode);
-				Session.set('currentRegionIndex', region.code);
-
-				// for (var kpi in kpis) {
-				// 	Session.set(kpi, Math.round(_.reduce(miniBajo.regions[regionKey].kpis[kpi].measures, function (memo, measure) {
-				// 		return memo + measure.currVal;
-				// 	}, 0) * 10) + '%');
-				// }
+				Session.set('currentRegion', regionObj.regionCode);
+				Session.set('currentRegionIndex', regionObj.code);
 			};
-
-
 
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
@@ -80,11 +60,7 @@ Router.map(function () {
 					scaleColors: ['#C8EEFF', '#006491'],
 					normalizeFunction: 'polynomial',
 					selectedRegion: 'us',
-					onRegionClick: regionEventFunction,
-					// onRegionOver: regionEventFunction,
-					onRegionOut: function () {
-						// TODO
-					}
+					onRegionClick: regionEventFunction
 				});
 
 				invertedRegionMap = _.clone(regionMap);
