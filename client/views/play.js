@@ -48,6 +48,21 @@ if (Session.get('isGamePlaying') && !gameTicker) {
 	gameTicker = startTicker();
 }
 
+// ======== Handlebars Helpers ========
+Handlebars.registerHelper('healthGradeBS', function (healthPercentage) {
+	var percentValue = parseInt(healthPercentage);
+
+	if (percentValue <= 33) {
+		return 'danger';
+	}
+
+	else if (percentValue > 33 && percentValue <= 66) {
+		return 'warning';
+	}
+
+	return 'success';
+});
+
 // ======== Data ========
 Template.play.lastUpdate = function () {
 	return Session.get('lastUpdate');
