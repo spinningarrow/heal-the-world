@@ -59,6 +59,7 @@ var countryMap = {
 	"tg": "westernAfrica",
 
 	"cn": "easternAsia",
+	"tw": "easternAsia",
 	"kp": "easternAsia",
 	"jp": "easternAsia",
 	"mn": "easternAsia",
@@ -204,81 +205,93 @@ var countryMap = {
 var regionMap = {
 	"easternAfrica" : {
 		"countries" : ["bi", "km", "dj", "er", "et", "ke", "mg", "mw", "mu", "mz", "re", "rw", "sc", "so", "ug", "tz", "zm", "zw"],
-		"name" : "Eastern Africa"
+		"name" : "Eastern Africa",
+		"regionCode" : "easternAfrica"
 	},
-
-
 	"middleAfrica" : {
 		"countries" : ["ao", "cm", "cf", "td", "cg", "cd", "gq", "ga", "st"],
-		"name" : "Middle Africa"
+		"name" : "Middle Africa",
+		"regionCode" : "middleAfrica"
 	},
 	"northernAfrica" :{
 		"countries" : ["dz", "eg", "ly", "ma", "sd", "tn"],
-		"name" : "Northern Africa"
+		"name" : "Northern Africa",
+		"regionCode" : "northernAfrica"
 	},
 	"southernAfrica" :{
 		"countries" : ["bw", "ls", "na", "za", "sz"],
-		"name" : "Southern Africa"
+		"name" : "Southern Africa",
+		"regionCode" : "southernAfrica"
 	},
 	"westernAfrica" : {
 		"countries" : ["bj", "bf", "cv", "ci", "gm", "gh", "gn", "gw", "lr", "ml", "mr", "ne", "ng", "sn", "sl", "tg"],
-		"name" : " Western Africa"
+		"name" : " Western Africa",
+		"regionCode" : "westernAfrica"
 	},
 	"easternAsia" : {
-		"countries" : ["cn", "kp", "jp", "mn", "kr"],
-		"name" : "Eastern Asia"
+		"countries" : ["cn", "kp", "jp", "mn", "kr", "tw"],
+		"name" : "Eastern Asia",
+		"regionCode" : "easternAsia"
 	},
 	"southCentralAsia" : {
 		"countries" : ["af", "bd", "bt", "in", "ir", "kz", "kg", "mv", "np", "pk", "lk", "tj", "tm", "uz"],
-		"name" : "South Central Asia"
+		"name" : "South Central Asia",
+		"regionCode" : "southCentralAsia"
 	},
 	"southEasternAsia" : {
 		"countries" : ["bn", "kh", "tl", "id", "la", "my", "mm", "ph", "th", "vn"],
-		"name" : "South Eastern Asia"
+		"name" : "South Eastern Asia",
+		"regionCode" : "southEasternAsia"
 	},
 	"westernAsia" : {
 		"countries" : ["az", "am", "cy", "ge", "iq", "il", "jo", "kw", "lb", "om", "qa", "sa", "sy", "tr", "ae", "ye"],
-		"name" : "Western Asia"
+		"name" : "Western Asia",
+		"regionCode" : "westernAsia"
 	},
 	"easternEurope" : {
 		"countries" : ["by", "bg", "cz", "hu", "pl", "md", "ro", "ru", "sk", "ua"],
-		"name" : "Eastern Europe"
+		"name" : "Eastern Europe",
+		"regionCode" : "easternEurope"
 	},
 	"northernEurope" : {
 		"countries" : ["dk", "ee", "fi", "is", "ie", "lv", "lt", "no", "se", "gb"],
-		"name" : "Northern Europe"
+		"name" : "Northern Europe",
+		"regionCode" : "northernEurope"
 	},
-
 	"southernEurope" : {
 		"countries" : ["al", "ba", "hr", "gr", "it", "mt", "pt", "si", "es", "mk", "rs"],
-		"name" : "Southern Europe"
+		"name" : "Southern Europe",
+		"regionCode" : "southernEurope"
 	},
-
 	"westernEurope" :{
 		"countries" : ["at", "be", "fr", "de", "nl", "ch"],
-		"name" : "Western Europe"
+		"name" : "Western Europe",
+		"regionCode" : "westernEurope"
 	},
-
-
 	"caribbean" : {
 		"countries" : ["bs", "dm", "ag", "ds", "bb", "cu", "dn", "do", "gd", "ht", "jm", "kn", "lc", "tt"],
-		"name" : "Caribbean"
+		"name" : "Caribbean",
+		"regionCode" : "caribbean"
 	},
 	"centralAmerica" :{
 		"countries" : ["bz", "cr", "sv", "gt", "hn", "mx", "ni", "pa"],
-		"name" : "Central America"
+		"name" : "Central America",
+		"regionCode" : "centralAmerica"
 	},
 	"southAmerica" :{
 		"countries" : ["ar", "bo", "br", "cl", "co", "ec", "fk", "gy", "gf", "pe", "py", "sr", "uy", "ve"],
-		"name" : "South America"
+		"name" : "South America",
+		"regionCode" : "southAmerica"
 	},
 	"northernAmerica" :{
 		"countries" : ["ca", "gl", "us"],
-		"name" : "Northern America"
+		"name" : "Northern America",
+		"regionCode" : "northernAmerica"
 	},
 	"oceania" :{
 		"countries" : ["au", "nz", "fj", "sb", "pg", "vu", "nc", "pf"],
 		"name" : "Oceania",
+		"regionCode" : "oceania"
 	},
 };
 

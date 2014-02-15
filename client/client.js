@@ -34,7 +34,9 @@ Router.map(function () {
 		after: function () {
 
 			var regionEventFunction = function (event, code, region) {
-				console.log(region);
+				// map.select(code);
+
+				console.log(getRegion(code).regionCode);
 				Session.set('social', '10%'); // temp hack
 				// Fetch data from collection (state engine)
 			}
