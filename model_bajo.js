@@ -12,7 +12,7 @@ worldState = {
 		return this.measureCount()*10;
 	},
 	"achievements": [],
-	"resource": 10000,
+	"resource": 5000,
 	"abilities": [],
 	"measureCount": function() {
 		var val = 0;
@@ -385,7 +385,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -713,7 +713,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -1040,7 +1040,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -1367,7 +1367,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -1694,7 +1694,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -2021,7 +2021,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -2348,7 +2348,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -2675,7 +2675,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -3002,7 +3002,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -3329,7 +3329,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -3656,7 +3656,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -3983,7 +3983,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -4310,7 +4310,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -4637,7 +4637,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -4964,7 +4964,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -5291,7 +5291,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -5618,7 +5618,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
@@ -5920,27 +5920,37 @@ worldState = {
 ---------------------------------------------------------*/
 
 implementMeasure = function implementMeasure (regionId, measureId) {
+	var message = "";
 	var kpi = getKPI(measureId);
-	console.log(worldState.regions[regionId].name);
-	console.log(kpi);
-	console.log(worldState.regions[regionId].kpis);
+	// console.log(worldState.regions[regionId].name);
+	// console.log(kpi);
+	// console.log(worldState.regions[regionId].kpis);
 	var measures = worldState.regions[regionId].kpis[kpi].measures;
 	for(var measureIndex in measures){
 		if(measures[measureIndex].id === measureId){
 			var measure = measures[measureIndex];
-
-			if(worldState.resource >= measure.cost()) {
-				worldState.resource -= measure.cost();
+			var cost = measure.cost();
+			if(worldState.resource >= cost) {
+				worldState.resource -= cost;
 				if(measure.currVal < 0.9){
 					measure.currVal += 0.1;
 				} else {
 					measure.currVal = 1.0;
+					message = "The world won't heal by just one act! ;)";
 				}
-
+				console.log(worldState.resource);
+			} else {
+				var issue = "";
+				if(kpi == 0){issue = "social";}
+				else if(kpi == 1){issue = "health & sanitation";}
+				else if(kpi == 2){issue = "environmental";}
+				else {issue = "education";}
+				message = "Sorry! You don't seem to have enough resources to do that! :( \n";
+				message += "Read more about " + issue + " issues while you wait for regeneration!";
 			}
 		}
 	}
-
+	console.log(message);
 	Session.set('lastUpdate', new Date());
 }
 
