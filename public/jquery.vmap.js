@@ -467,9 +467,7 @@
       var path = e.target;
       var code = e.target.id.split('_').pop();
 
-      var regionClickEvent = $.Event('regionClick.jqvmap');
-
-      jQuery(params.container).trigger(regionClickEvent, [code, mapData.pathes[code].name]);
+      jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
       if (!regionClickEvent.isDefaultPrevented()) {
         if (map.selectedRegions.indexOf(code) !== -1) {
           map.deselect(code, path);
@@ -659,7 +657,7 @@
 
     highlightRegionOfCountry: function (cc) {
       // this.highlight("us");
-      var countries = getCountriesInRegion(cc);
+      //var countries = getCountriesInRegion(cc);
       var region = getRegion(cc);
       countries = region["countries"];
       // this.label.text (region["name"]);
@@ -672,7 +670,9 @@
     },
 
     unhighlightRegionOfCountry: function (cc) {
-      var countries = getCountriesInRegion(cc);
+      // var countries = getCountriesInRegion(cc);
+      var region = getRegion(cc);
+      countries = region["countries"];
       for (countryIndex in countries)
       {
         this.unhighlight(countries[countryIndex]);
