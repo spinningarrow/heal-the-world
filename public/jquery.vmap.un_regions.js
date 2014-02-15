@@ -282,7 +282,7 @@ var regionMap = {
 		"code" : 17
 	},
 	"caribbean" : {
-		"countries" : ["bs", "dm", "ag", "ds", "bb", "cu", "dn", "do", "gd", "ht", "jm", "kn", "lc", "tt"],
+		"countries" : ["bs", "dm", "ag", "bb", "cu", "do", "gd", "ht", "jm", "kn", "lc", "tt"],
 		"name" : "Caribbean",
 		"regionCode" : "caribbean",
 		"code" : 0
@@ -313,7 +313,7 @@ var regionMap = {
 	},
 };
 
-function getCountriesInRegion(cc) {
+getCountriesInRegion = function getCountriesInRegion(cc) {
 	for (var regionKey in regions)
 	{
 		var region = regions[regionKey];
@@ -334,12 +334,33 @@ function getCountriesInRegion(cc) {
 	}
 }
 
-function getRegion(cc) {
+selectRegion = function selectRegion (regionCode) {
+
+	if(!regionCode)
+		return;
+	var region = regionMap[regionCode];
+
+	for(countryIndex in region.countries)
+	{
+
+		$('#vmap').vectorMap('select', region.countries[countryIndex]);
+	}
+}
+
+deselectRegion = function deselectRegion (regionCode) {
+	var region = regionMap[regionCode];
+	for(countryIndex in region.countries)
+	{
+		$('#vmap').vectorMap('deselect', region.countries[countryIndex]);
+	}
+}
+
+getRegion = function getRegion(cc) {
 	var regionCode = countryMap[cc];
 	return regionMap[regionCode];
 }
 
-function updateColours (data)
+updateColours = function updateColours (data)
 {
 	var max = 0,
 		min = 100,
@@ -372,7 +393,11 @@ function updateColours (data)
 			}
 		}
 	}
-	console.log(colors.toString());
 	//initialize JQVMap
 	jQuery('#vmap').vectorMap('set', 'colors', colors);
 }
+
+regionFns = {
+	selectRegion: selectRegion,
+	deselectRegion: deselectRegion
+};

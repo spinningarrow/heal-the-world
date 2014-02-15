@@ -1,51 +1,54 @@
+function secondlyUpdate(y, fn) {
+	console.log("Game state updated.");
+
+	if (worldStateFns && worldStateFns.updateState) {
+		worldStateFns.updateState();
+	}
+
+	if (regionFns && regionFns.selectRegion) {
+        regionFns.selectRegion(Session.get("currentRegion"));
+    }
+}
+
+function startTicker() {
+	return Meteor.setInterval(function() {
+		secondlyUpdate("yolo");
+	}, 1000);
+}
+
+// LOTS OF HAX
+// This may break
+var measuresList = [
+	{ id: 0, name: 'Build a school' },
+	{ id: 1, name: 'Build a community college' },
+	{ id: 2, name: 'Invest in free adult education' },
+	{ id: 3, name: 'Build public toilets' },
+	{ id: 4, name: 'Build a hospital' },
+	{ id: 5, name: 'Affordable healthcare' },
+	{ id: 6, name: 'Improve the condition of basic amenities' },
+	{ id: 7, name: 'Research disease vaccines' },
+	{ id: 8, name: 'Promote women empowerment' },
+	{ id: 9, name: 'Increase police coverage' },
+	{ id: 10, name: 'Improve welfare subsidies' },
+	{ id: 11, name: 'Increase civic rights' },
+	{ id: 12, name: 'Cut carbon emissions' },
+	{ id: 13, name: 'Increase forest cover' },
+	{ id: 14, name: 'Restore natural habitats' },
+	{ id: 15, name: 'Invest in green technology' }
+];
+
+var gameTicker;
+
 // Default region
 Session.set('currentRegionIndex', 12);
+Session.set('currentRegion', 'southEasternAsia');
 
-var kpis = {
-	'social': true,
-	'health': true,
-	'environment': true,
-	'literacy': true
-};
-
-function calculateKpi(kpi) {
-	var regionKey = Session.get('currentRegion');
-
-	return Math.round(_.reduce(miniBajo.regions[regionKey].kpis[kpi].measures, function (memo, measure) {
-		return memo + measure.currVal;
-	}, 0) * 10) + '%';
+// Apply game state
+if (Session.get('isGamePlaying') && !gameTicker) {
+	gameTicker = startTicker();
 }
 
-for (var kpi in kpis) {
-	Template.play[kpi] = calculateKpi.bind(null, kpi);
-}
-
-// Template.play.social = function () {
-// 	// return Session.get('social') || '50%';
-
-// 	var regionKey = Session.get('currentRegion');
-
-// 	return Math.round(_.reduce(miniBajo.regions[regionKey].kpis.social.measures, function (memo, measure) {
-// 		return memo + measure.currVal;
-// 	}, 0) * 10) + '%';
-
-// 	// for (var kpi in kpis) {
-// 	// 	Session.set(kpi, ;
-// 	// }
-// };
-
-// Template.play.literacy = function () {
-// 	return Session.get('literacy') || '50%';
-// };
-
-// Template.play.environment = function () {
-// 	return Session.get('environment') || '50%';
-// };
-
-// Template.play.health = function () {
-// 	return Session.get('health') || '50%';
-// };
-
+// ======== Data ========
 Template.play.lastUpdate = function () {
 	return Session.get('lastUpdate');
 };
@@ -74,44 +77,34 @@ Template.play.measureButtons = function () {
 	return Session.get('measureButtons') || [];
 };
 
-function secondlyUpdate(y, fn)
-{
-	console.log("yolo");
-	console.log(worldState);
-	console.log(worldStateFns);
+Template.play.isGamePlaying = function () {
+	return Session.get('isGamePlaying') || false;
+};
 
-	if (worldStateFns && worldStateFns.updateState) {
-		worldStateFns.updateState();
-	}
-	// fn();
-}
-
-Meteor.setInterval(function() {
-	secondlyUpdate("yolo");
-}, 1000);
-
-// LOTS OF HAX
-// This will break
-var measuresList = [
-	{ id: 0, name: 'Build a school' },
-	{ id: 1, name: 'Build a community college' },
-	{ id: 2, name: 'Invest in free adult education' },
-	{ id: 3, name: 'Build public toilets' },
-	{ id: 4, name: 'Build a hospital' },
-	{ id: 5, name: 'Affordable healthcare' },
-	{ id: 6, name: 'Improve the condition of basic amenities' },
-	{ id: 7, name: 'Research disease vaccines' },
-	{ id: 8, name: 'Promote women empowerment' },
-	{ id: 9, name: 'Increase police coverage' },
-	{ id: 10, name: 'Improve welfare subsidies' },
-	{ id: 11, name: 'Increase civic rights' },
-	{ id: 12, name: 'Cut carbon emissions' },
-	{ id: 13, name: 'Increase forest cover' },
-	{ id: 14, name: 'Restore natural habitats' },
-	{ id: 15, name: 'Invest in green technology' }
-];
-
+// ======== Events ========
 var playEventsMap = {
+	'click #start': function () {
+		gameTicker = startTicker();
+
+		Session.set('isGamePlaying', true);
+	},
+
+	'click #pause': function () {
+
+		// Pause the game if it is playing
+		if (gameTicker) {
+			Meteor.clearInterval(gameTicker);
+		}
+
+		// Save the game state
+		var currentWorld = Worlds.findOne({ player: Meteor.userId() });
+		Worlds.update({ _id: currentWorld._id }, { $set: {
+			state: simplify()
+		} });
+
+		Session.set('isGamePlaying', false);
+	},
+
 	'click #progress-social': function () {
 		Session.set('measureButtons', measuresList.slice(8, 12));
 	},

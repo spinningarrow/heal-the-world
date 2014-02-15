@@ -27,6 +27,14 @@ Router.map(function () {
 	this.route('play', {
 		path: '/play',
 		before: function () {
+			if (!Meteor.user() || Meteor.user().profile.role !== 'player') {
+				// render the login template but keep the url in the browser the same
+				this.render('index');
+
+				// stop the rest of the before hooks and the action function
+				this.stop();
+			}
+
 			deferred1 = $.getScript('jquery.vmap.js');
 			deferred2 = $.getScript('jquery.vmap.world.js');
 			deferred3 = $.getScript('jquery.vmap.un_regions.js');
@@ -48,7 +56,7 @@ Router.map(function () {
 				// Session.set('social', '10%'); // temp hack
 				// Fetch data from collection (state engine)
 				// Session.set('currentRegion', regionMap[code]);
-				Session.set('currentRegion', region.code);
+				Session.set('currentRegion', region.regionCode);
 				Session.set('currentRegionIndex', region.code);
 
 				// for (var kpi in kpis) {
@@ -63,8 +71,8 @@ Router.map(function () {
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
 					map: 'world_en',
-					backgroundColor: '#333333',
-					color: '#ffffff',
+					backgroundColor: '#444444',
+					color: '#0000000',
 					hoverOpacity: 0.2,
 					selectedColor: '#666666',
 					enableZoom: true,
