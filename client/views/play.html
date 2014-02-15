@@ -12,19 +12,25 @@
 			<button id="pause" class="btn btn-warning {{#unless isGamePlaying}}hidden{{/unless}}">Pause Game</button>
 
 			<div>
-				<h5>Progress Indicators</h5>
-				<div class="well">
+				<div class="progress-links well">
+					<h6>Social Equality</h6>
 					<div id="progress-social" class="progress progress-striped">
 						<div class="progress-bar progress-bar-{{healthGradeBS social}}" style="width: {{social}};">{{social}}</div>
 					</div>
+
+					<h6>Literacy</h6>
 					<div id="progress-literacy" class="progress progress-striped">
 						<div class="progress-bar progress-bar-{{healthGradeBS literacy}}" style="width: {{literacy}};">{{literacy}}
 						</div>
 					</div>
+
+					<h6>Health and Sanitation</h6>
 					<div id="progress-health" class="progress progress-striped">
 						<div class="progress-bar progress-bar-{{healthGradeBS health}}" style="width: {{health}};">{{health}}
 						</div>
 					</div>
+
+					<h6>Environment</h6>
 					<div id="progress-environment" class="progress progress-striped">
 						<div class="progress-bar progress-bar-{{healthGradeBS environment}}" style="width: {{environment}};">{{environment}}
 						</div>
@@ -35,7 +41,7 @@
 				<h5> Measures </h5>
 				<div class="well">
 					{{#each measureButtons}}
-						<button id="measure-{{this.id}}" class="btn btn-default">{{this.name}}</button><br>
+						<button id="measure-{{this.id}}" class="btn btn-default btn-sm btn-block" {{#unless isGamePlaying}}disabled{{/unless}}>{{this.name}}</button>
 					{{/each}}
 
 					<div class="hidden">{{lastUpdate}}</div>
