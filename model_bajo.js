@@ -57,7 +57,7 @@ worldState = {
 			return val;
 		},
 		"production": function() {
-			return this.healthRating()*50;
+			return this.healthRating()*10;
 		},
 		"depletion": function() {
 			var depl = this.healthRating() * 0.033;
