@@ -17,7 +17,7 @@ worldState = {
 	"measureCount": function() {
 		var val = 0;
 		for(var regionIndex in this.regions){
-			var region = regions[regionIndex];
+			var region = this.regions[regionIndex];
 			val += region.measureCount();
 		}
 		return val;
@@ -52,7 +52,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -89,6 +89,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -159,6 +166,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -242,6 +256,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -312,6 +333,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "schools",
@@ -380,7 +408,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -417,6 +445,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -487,6 +522,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -569,6 +611,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -638,6 +687,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -708,7 +764,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -745,6 +801,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -815,6 +878,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -897,6 +967,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -966,6 +1043,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1035,7 +1119,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -1072,6 +1156,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1142,6 +1233,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1224,6 +1322,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -1293,6 +1398,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1362,7 +1474,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -1399,6 +1511,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1469,6 +1588,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1551,6 +1677,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -1620,6 +1753,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1689,7 +1829,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -1726,6 +1866,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1796,6 +1943,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -1878,6 +2032,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -1947,6 +2108,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2016,7 +2184,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -2053,6 +2221,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2123,6 +2298,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2205,6 +2387,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -2274,6 +2463,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2343,7 +2539,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -2380,6 +2576,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2450,6 +2653,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2532,6 +2742,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -2601,6 +2818,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2670,7 +2894,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -2707,6 +2931,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2777,6 +3008,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2859,6 +3097,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -2928,6 +3173,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -2997,7 +3249,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -3034,6 +3286,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3104,6 +3363,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3186,6 +3452,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -3255,6 +3528,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3324,7 +3604,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -3361,6 +3641,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3431,6 +3718,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3513,6 +3807,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -3582,6 +3883,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3651,7 +3959,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -3688,6 +3996,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3758,6 +4073,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3840,6 +4162,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -3909,6 +4238,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -3978,7 +4314,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -4015,6 +4351,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4085,6 +4428,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4167,6 +4517,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -4236,6 +4593,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4305,7 +4669,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -4342,6 +4706,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4412,6 +4783,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4494,6 +4872,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -4563,6 +4948,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4632,7 +5024,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -4669,6 +5061,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4739,6 +5138,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4821,6 +5227,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -4890,6 +5303,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -4959,7 +5379,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -4996,6 +5416,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5066,6 +5493,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5148,6 +5582,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -5217,6 +5658,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5286,7 +5734,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -5323,6 +5771,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5393,6 +5848,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5475,6 +5937,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -5544,6 +6013,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5613,7 +6089,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count;
+				val += this.kpi.count();
 			}
 			return val;
 		},
@@ -5650,6 +6126,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5720,6 +6203,13 @@ worldState = {
 					retVal += (measure.efficacy/totalMeasure)*measure.currVal;
 				}
 				return retVal;
+			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
 			},
 			"severity": 1,
 			"measures": [{
@@ -5802,6 +6292,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "emission",
@@ -5872,6 +6369,13 @@ worldState = {
 				}
 				return retVal;
 			},
+			"count": function() {
+				var count = 0;
+				for(var measureIndex in this.measures){
+					count += this.measures[measureIndex];
+				}
+				return count;
+			},
 			"severity": 1,
 			"measures": [{
 				"name": "schools",
@@ -5934,6 +6438,7 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 				worldState.resource -= cost;
 				if(measure.currVal < 0.9){
 					measure.currVal += 0.1;
+					message += getMessage(measureId, regionId);
 				} else {
 					measure.currVal = 1.0;
 					message = "The world won't heal by just one act! ;)";
@@ -5956,6 +6461,69 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 
 	console.log(message);
 	Session.set('lastUpdate', new Date());
+}
+
+getMessage = function getMessage(measureId, regionId) {
+	var region = getRegion(regionId);
+	switch(measureId){
+		case 0:
+			return "Children in " + region + " now have better access to education! Sharpened pencils, sharpened minds!";
+		case 1:
+			return "A new college just opened in " + region + "! Well done! Creating tomorrow's professionals, today.";
+		case 2:
+			return "News: Better free online courses lead to more sophisticated people in " + region;
+		case 3:
+			return "Easy access to sanitary facilities slightly improves the health of " + region;
+		case 5:
+			return "People jostle to access improved healthcare at cheaper costs in " + region;
+		case 4:
+			return "New central hospital in " + region + " has people smiling from ear to ear!";
+		case 6:
+			return "Cleaner water, cheaper electricity, more housing! Celebrations seen all around " + region;
+		case 7:
+			return "" + region + "improves efforts to research and distribute vaccines.";
+		case 8:
+			return "Governments of " + region + " increase the drive to empower women, by awareness and legislature.";
+		case 9:
+			return "Morning bulletin: Greater police coverage in " + region + " leads to drop in crime rates.";
+		case 10:
+			return "Welfare subsidies in " + region + " rise. The poor rejoice while the rich fear higher taxes.";
+		case 11:
+			return "Leaders of " + region + " announce civic reform. More freedoms promised for the people.";
+		case 12:
+			return "" + region + " makes concerted efforts to cut carbon emissions. Maybe the environment can still be saved."
+		case 13:
+			return "" + region + " goes green. Leaders of the rest of the world turn green with envy.";
+		case 14:
+			return "Animals in " + region + " less tense as natural habitats are announced to be restored.";
+		case 15:
+			return "Long-term vision of environmental efforts in " + region + " praised by industry experts.";
+		default: return "" + region + " thanks your efforts!";
+	}
+}
+
+getRegion = function getRegion(regionId){
+	switch(regionId){
+		case 0: return "Caribbean";
+		case 1: return "Central America";
+		case 2: return "Eastern Africa";
+		case 3: return "Eastern Asia";
+		case 4: return "Eastern Europe";
+		case 5: return "Middle Africa";
+		case 6: return "Northern Africa";
+		case 7: return "Northern America";
+		case 8: return "Northern Europe";
+		case 9: return "Oceania";
+		case 10: return "South America";
+		case 11: return "South Central Asia";
+		case 12: return "South Eastern Asia";
+		case 13: return "Southern Africa";
+		case 14: return "Southern Europe";
+		case 15: return "Western Africa";
+		case 16: return "Western Asia";
+		case 17: return "Western Europe";
+
+	}
 }
 
 getKPI = function getKPI (measureId) {
