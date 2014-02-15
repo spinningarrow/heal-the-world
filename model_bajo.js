@@ -5971,8 +5971,8 @@ depleteState = function depleteState() {
 			var kpi = region.kpis[kpiIndex];
 			for(var measureIndex in kpi.measures){
 				var measure = kpi.measures[measureIndex];
-				if(measure.currVal - region.depletion() > 0.0){
-					measure.currVal -= region.depletion();
+				if(measure.currVal - region.depletion() * 0.01 > 0.0){
+					measure.currVal -= region.depletion() * 0.01;
 				} else {
 					measure.currVal = 0.0;
 				}
