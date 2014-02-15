@@ -7,6 +7,10 @@ Router.map(function () {
 		path: '/',
 		template: 'index'
 	});
+
+	this.route('agency-signup', {
+		path: '/agency-signup'
+	});
 });
 
 if (Meteor.isClient) {

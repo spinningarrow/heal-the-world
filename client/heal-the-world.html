@@ -1,5 +1,5 @@
 <head>
-	<title>heal-the-world</title>
+	<title>Heal the World</title>
 </head>
 
 <body>
@@ -7,13 +7,66 @@
 
 <template name="layout">
 	<div class="container">
+		<h1>Heal the World</h1>
 		{{yield}}
 	</div>
 </template>
 
 <template name="index">
-	<h1>Heal the World</h1>
+	<a href="/agency-signup" id="agency-signup" class="btn btn-default">Agency Signup</a>
+	<a href="/play" id="play" class="btn btn-primary">Play</a>
+</template>
 
-	<button id="agency-signup" class="btn btn-default">Agency Signup</button>
-	<button id="play" class="btn btn-primary">Play</button>
+<template name="agency-signup">
+	<form role="form">
+		<div class="form-group">
+			<label for="bio">Bio</label>
+			<textarea id="bio" class="form-control" rows="3" placeholder="Tell us a little about yourself"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="website">Website URL</label>
+			<input type="text" id="website" class="form-control" placeholder="Website URL">
+		</div>
+
+		<div class="form-group">
+			<label for="facebook">Facebook Page URL</label>
+			<input type="text" id="facebook" class="form-control" placeholder="Facebook Page URL">
+		</div>
+
+		<div class="form-group">
+			<label>Problem tags</label>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="education">
+					Education
+				</label>
+			</div>
+
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="health">
+					Health and Sanitation
+				</label>
+			</div>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="social">
+					Social Equality
+				</label>
+			</div>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="environment">
+					Environment
+				</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 </template>
