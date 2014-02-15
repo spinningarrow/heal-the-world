@@ -1,4 +1,6 @@
 <template name="index">
-	<button id="agency-signup" class="btn btn-default">Login as Agency</button>
-	<button id="play" class="btn btn-primary">Login as Player</button>
+	{{#unless currentUser}}
+		<button id="agency-signup" class="btn btn-default">Login as Agency</button>
+		<button id="play" class="btn btn-primary">Login as Player</button>
+	{{/unless}}
 </template>
