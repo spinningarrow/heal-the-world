@@ -19,7 +19,9 @@
 			</div>
 
 		{{#constant}}
-			<div id="vmap" style="height:400px;"></div>
+			<div style="width: 100%;">
+				<div id="vmap" style="height:400px;"></div>
+			</div>
 		{{/constant}}
 		<div class = "well">
 				{{tickerMessage}}
@@ -29,26 +31,31 @@
 			<div>
 				<h5>Progress Indicators</h5>
 				<div class="progress-links">
-					<h6>Social Equality</h6>
-					<div id="progress-social" class="progress progress-striped">
-						<div class="progress-bar progress-bar-{{healthGradeBS social}}" style="width: {{social}};">{{social}}</div>
-					</div>
-
-					<h6>Literacy</h6>
-					<div id="progress-literacy" class="progress progress-striped">
-						<div class="progress-bar progress-bar-{{healthGradeBS literacy}}" style="width: {{literacy}};">{{literacy}}
+					<div id="progress-social" class="progress-kpi">
+						<h6>Social Equality <span class="glyphicon glyphicon-record"></span></h6>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-{{healthGradeBS social}}" style="width: {{social}};">{{social}}</div>
 						</div>
 					</div>
 
-					<h6>Health and Sanitation</h6>
-					<div id="progress-health" class="progress progress-striped">
-						<div class="progress-bar progress-bar-{{healthGradeBS health}}" style="width: {{health}};">{{health}}
+					<div id="progress-literacy" class="progress-kpi">
+						<h6>Literacy <span class="glyphicon glyphicon-record"></span></h6>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-{{healthGradeBS literacy}}" style="width: {{literacy}};">{{literacy}}</div>
 						</div>
 					</div>
 
-					<h6>Environment</h6>
-					<div id="progress-environment" class="progress progress-striped">
-						<div class="progress-bar progress-bar-{{healthGradeBS environment}}" style="width: {{environment}};">{{environment}}
+					<div id="progress-health" class="progress-kpi">
+						<h6>Health and Sanitation <span class="glyphicon glyphicon-record"></span></h6>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-{{healthGradeBS health}}" style="width: {{health}};">{{health}}</div>
+						</div>
+					</div>
+
+					<div id="progress-environment" class="progress-kpi">
+						<h6>Environment <span class="glyphicon glyphicon-record"></span></h6>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-{{healthGradeBS environment}}" style="width: {{environment}};">{{environment}}</div>
 						</div>
 					</div>
 				</div>

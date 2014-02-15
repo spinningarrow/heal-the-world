@@ -1,4 +1,4 @@
-var countryMap = {
+countryMap = {
 	"bi": "easternAfrica",
 	"km": "easternAfrica",
 	"dj": "easternAfrica",
@@ -202,7 +202,7 @@ var countryMap = {
 	"nc":"oceania",
 	"pf":"oceania"
 };
-var regionMap = {
+regionMap = {
 	"easternAfrica" : {
 		"countries" : ["bi", "km", "dj", "er", "et", "ke", "mg", "mw", "mu", "mz", "re", "rw", "sc", "so", "ug", "tz", "zm", "zw"],
 		"name" : "Eastern Africa",

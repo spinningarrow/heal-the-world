@@ -115,6 +115,16 @@ h5 {
 .bs-example>.list-group { max-width: 400px }
 .bs-example .navbar:last-child { margin-bottom: 0 }
 
+.progress-kpi {
+	cursor: pointer;
+}
+
+.progress-kpi .glyphicon {
+	visibility: hidden;
+}
+
+.progress-kpi.active .glyphicon {
+	visibility: visible;
 }
 
 .game-status {

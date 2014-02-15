@@ -5,7 +5,18 @@ Router.configure({
 Router.map(function () {
 	this.route('index', {
 		path: '/',
-		template: 'index'
+		template: 'index',
+		before: function () {
+			if (Meteor.user()) {
+				if (Meteor.user().profile.role === 'player') {
+					Router.go('/play');
+				}
+
+				else if (Meteor.user().profile.role === 'agency') {
+					Router.go('/agency-signup');
+				}
+			}
+		}
 	});
 
 	this.route('agency-signup', {
@@ -41,6 +52,14 @@ Router.map(function () {
 				this.stop();
 			}
 
+			var userWorld = Worlds.findOne({
+				player: Meteor.userId()
+			});
+
+			if (userWorld) {
+				complexify(userWorld.state);
+			}
+
 			deferred1 = $.getScript('jquery.vmap.js');
 			deferred2 = $.getScript('jquery.vmap.world.js');
 			deferred3 = $.getScript('jquery.vmap.un_regions.js');
@@ -59,7 +78,7 @@ Router.map(function () {
 					map: 'world_en',
 					// backgroundColor: '#444444',
 					backgroundColor: '#fff',
-					color: '#0000000',
+					color: '#999',
 					hoverOpacity: 0.2,
 					selectedColor: '#666666',
 					enableZoom: true,

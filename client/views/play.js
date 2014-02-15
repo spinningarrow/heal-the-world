@@ -114,7 +114,11 @@ Template.play.world_health = function () {
 };
 
 Template.play.current_region = function () {
-	return regionMap[Session.get('currentRegion')].name;
+	if (typeof regionMap !== 'undefined') {
+		return regionMap[Session.get('currentRegion')].name;
+	}
+
+	return Session.get('currentRegion');
 };
 
 // ======== Events ========
@@ -174,6 +178,12 @@ for (var i = 0; i < measuresList.length; i++) {
 	(function (measureId) {
 		playEventsMap['click #measure-' + measureId] = function () {
 			implementMeasure(Session.get('currentRegionIndex'), measureId);
+
+			// Save the game state
+			var currentWorld = Worlds.findOne({ player: Meteor.userId() });
+			Worlds.update({ _id: currentWorld._id }, { $set: {
+				state: simplify()
+			} });
 		};
 	})(i);
 }
