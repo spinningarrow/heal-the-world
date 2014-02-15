@@ -20,8 +20,8 @@
 </template>
 
 <template name="index">
-	<button href="/agency-signup" id="agency-signup" class="btn btn-default">Agency Signup</button>
-	<a href="/play" id="play" class="btn btn-primary">Play</a>
+	<button href="/agency-signup" id="agency-signup" class="btn btn-default">Login as Agency</button>
+	<a href="/play" id="play" class="btn btn-primary">Login as Player</a>
 </template>
 
 <template name="agencySignup">
@@ -46,7 +46,7 @@
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="education" value="education">
+					<input type="checkbox" id="education" value="education" {{#if formData.problemTags.education}}checked{{/if}}>
 					Education
 				</label>
 			</div>
@@ -54,21 +54,21 @@
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="health" value="health">
+					<input type="checkbox" id="health" value="health" {{#if formData.problemTags.health}}checked{{/if}}>
 					Health and Sanitation
 				</label>
 			</div>
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="social" value="social">
+					<input type="checkbox" id="social" value="social" {{#if formData.problemTags.social}}checked{{/if}}>
 					Social Equality
 				</label>
 			</div>
 
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="environment" value="environment">
+					<input type="checkbox" id="environment" value="environment" {{#if formData.problemTags.environment}}checked{{/if}}>
 					Environment
 				</label>
 			</div>

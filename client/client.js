@@ -28,6 +28,7 @@ if (Meteor.isClient) {
 	Template.layout.events({
 		'click #logout': function () {
 			Meteor.logout();
+			Router.go('index');
 		}
 	});
 
@@ -66,12 +67,11 @@ if (Meteor.isClient) {
 	});
 
 	Template.agencySignup.formData = function () {
-		/*var agency = Agencies.findOne({
+		var agency = Agencies.findOne({
 			owner: Meteor.userId()
 		});
 
-		return agency.data;*/
-		return {};
+		return (agency ? agency.data : {});
 	};
 
 	Template.agencySignup.events({
