@@ -32,6 +32,13 @@ Router.map(function () {
 			deferred3 = $.getScript('jquery.vmap.un_regions.js');
 		},
 		after: function () {
+
+			var regionEventFunction = function (event, code, region) {
+				console.log(region);
+				Session.set('social', '10%'); // temp hack
+				// Fetch data from collection (state engine)
+			}
+
 			$.when(deferred1, deferred2, deferred3).done(function () {
 				$('#vmap').vectorMap({
 					map: 'world_en',
@@ -42,7 +49,12 @@ Router.map(function () {
 					enableZoom: true,
 					showTooltip: true,
 					scaleColors: ['#C8EEFF', '#006491'],
-					normalizeFunction: 'polynomial'
+					normalizeFunction: 'polynomial',
+					onRegionClick: regionEventFunction,
+					onRegionOver: regionEventFunction,
+					onRegionOut: function () {
+						// TODO
+					}
 				});
 			})
 		}

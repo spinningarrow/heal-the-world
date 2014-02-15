@@ -467,7 +467,9 @@
       var path = e.target;
       var code = e.target.id.split('_').pop();
 
-      jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
+      var regionClickEvent = $.Event('regionClick.jqvmap');
+
+      jQuery(params.container).trigger(regionClickEvent, [code, mapData.pathes[code].name]);
       if (!regionClickEvent.isDefaultPrevented()) {
         if (map.selectedRegions.indexOf(code) !== -1) {
           map.deselect(code, path);
@@ -485,12 +487,12 @@
         if (map.label.is(':visible')) {
             var left = e.pageX - 15 - map.labelWidth;
             var top = e.pageY - 15 - map.labelHeight;
-            
+
             if(left < 0)
                left = e.pageX + 15;
             if(top < 0)
                 top = e.pageY + 15;
-            
+
             map.label.css({
                 left: left,
                 top: top
@@ -523,7 +525,7 @@
     }
 
     this.bindZoomButtons();
-    
+
     if(params.pins) {
       /*if(params.pinMode) {
           if(params.pinMode != "id" && params.pinMode != "content") {
@@ -853,7 +855,7 @@
         map.zoomOut();
       });
     },
-    
+
     zoomIn: function () {
       var map = this;
       var sliderDelta = (jQuery('#zoom').innerHeight() - 6 * 2 - 15 * 2 - 3 * 2 - 7 - 6) / (this.zoomMaxStep - this.zoomCurStep);
@@ -869,11 +871,11 @@
         map.zoomCurStep++;
 
         jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) - sliderDelta);
-        
+
         map.container.trigger("zoomIn");
       }
     },
-    
+
     zoomOut: function () {
       var map = this;
       var sliderDelta = (jQuery('#zoom').innerHeight() - 6 * 2 - 15 * 2 - 3 * 2 - 7 - 6) / (this.zoomMaxStep - this.zoomCurStep);
@@ -889,7 +891,7 @@
         map.zoomCurStep--;
 
         jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) + sliderDelta);
-        
+
         map.container.trigger("zoomOut");
       }
     },
@@ -906,7 +908,7 @@
     getPinId: function (cc) {
       return this.getCountryId(cc)+'_pin';
     },
-    
+
     placePins: function(pins, pinMode){
       var map = this;
 
