@@ -6023,7 +6023,7 @@ simplify = function simplify() {
 }
 
 complexify = function complexify (saveState) {
-		var totValChanged = 0;
+	var totValChanged = 0;
 	worldState.resource = saveState.resource;
 	var values = saveState.worldState;
 //	console.log(values);

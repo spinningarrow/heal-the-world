@@ -1,5 +1,6 @@
 // Default region
 Session.set('currentRegionIndex', 12);
+Session.set('currentRegion', 'southEasternAsia');
 
 var kpis = {
 	'social': true,
@@ -76,18 +77,24 @@ Template.play.measureButtons = function () {
 
 function secondlyUpdate(y, fn)
 {
-	console.log("yolo");
-	console.log(worldState);
-	console.log(worldStateFns);
+	// console.log("yolo");
+	// console.log(worldState);
+	// console.log(worldStateFns);
 
 	if (worldStateFns && worldStateFns.updateState) {
 		worldStateFns.updateState();
 	}
+
+	if (regionFns && regionFns.selectRegion) {
+		regionFns.selectRegion(Session.get("currentRegion"));
+	}
+
 	// fn();
 }
 
 Meteor.setInterval(function() {
 	secondlyUpdate("yolo");
+
 }, 1000);
 
 // LOTS OF HAX

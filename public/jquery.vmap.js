@@ -571,7 +571,6 @@
 		zoomCurStep: 1,
 
 		setColors: function (key, color) {
-			console.log("hello");
 			if (typeof key == 'string') {
 				this.countries[key].setFill(color);
 				this.countries[key].setAttribute("original", color);
@@ -685,6 +684,7 @@
 
 		select: function (cc, path) {
 			path = path || $('#' + this.getCountryId(cc))[0];
+			if(!path) console.log(cc);
 			if(this.selectedRegions.indexOf(cc) < 0) {
 				if (this.multiSelectRegion) {
 					this.selectedRegions.push(cc);
