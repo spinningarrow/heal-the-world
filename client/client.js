@@ -27,6 +27,11 @@ Router.map(function () {
 	this.route('play', {
 		path: '/play',
 		before: function () {
+			if (!Meteor.user()) {
+				this.render('index');
+				this.stop();
+			}
+
 			deferred1 = $.getScript('jquery.vmap.js');
 			deferred2 = $.getScript('jquery.vmap.world.js');
 			deferred3 = $.getScript('jquery.vmap.un_regions.js');
