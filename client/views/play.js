@@ -4,6 +4,10 @@ function secondlyUpdate(y, fn) {
 	if (worldStateFns && worldStateFns.updateState) {
 		worldStateFns.updateState();
 	}
+
+	if (regionFns && regionFns.selectRegion) {
+        regionFns.selectRegion(Session.get("currentRegion"));
+    }
 }
 
 function startTicker() {
@@ -37,6 +41,7 @@ var gameTicker;
 
 // Default region
 Session.set('currentRegionIndex', 12);
+Session.set('currentRegion', 'southEasternAsia');
 
 // Apply game state
 if (Session.get('isGamePlaying') && !gameTicker) {
