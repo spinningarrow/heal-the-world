@@ -74,5 +74,8 @@ Template.index.events({
 		} else {
 			Router.go('/play');
 		}
+	},
+	'click #agencies': function () {
+		Router.go('/agencies');
 	}
 });

@@ -5954,7 +5954,7 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 		message += "\nRemember to focus on all regions!"
 	}
 
-	console.log(message);
+	Session.set('implementationResult', message);
 	Session.set('lastUpdate', new Date());
 }
 

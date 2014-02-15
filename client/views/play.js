@@ -96,6 +96,10 @@ Template.play.isGamePlaying = function () {
 	return Session.get('isGamePlaying') || false;
 };
 
+Template.play.tickerMessage = function () {
+	return Session.get('implementationResult') || 'Default message, yo!';
+}
+
 // ======== Events ========
 var playEventsMap = {
 	'click #start': function () {

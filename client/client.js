@@ -22,6 +22,12 @@ Router.map(function () {
 		}
 	});
 
+	this.route('agencies', {
+		path: '/agencies',
+		template: 'agencies',
+
+	});
+
 	var deferred1, deferred2, deferred3;
 
 	this.route('play', {

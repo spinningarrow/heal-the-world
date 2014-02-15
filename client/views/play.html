@@ -3,9 +3,13 @@
 
 	<div class="row">
 		<div class="col-md-8">
-		{{#constant}}
-			<div id="vmap" style="height:400px;"></div>
-		{{/constant}}
+			{{#constant}}
+			<div id="vmap"  style="height:400px;"></div>
+			{{/constant}}
+
+			<div class = "well">
+				{{tickerMessage}}
+			</div>
 		</div>
 		<div class="col-md-4">
 			<button id="start" class="btn btn-primary {{#if isGamePlaying}}hidden{{/if}}">Start/Resume Game</button>
