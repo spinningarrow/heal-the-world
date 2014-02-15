@@ -571,8 +571,6 @@
 		zoomCurStep: 1,
 
 		setColors: function (key, color) {
-			console.log(color);
-			console.log(key);
 			console.log("hello");
 			if (typeof key == 'string') {
 				this.countries[key].setFill(color);
@@ -581,10 +579,8 @@
 				var colors = key;
 
 				for (var code in colors) {
-					console.log(code);
 					if (this.countries[code]) {
 						this.countries[code].setFill(colors[code]);
-						console.log(colors[code]);
 						this.countries[code].setAttribute("original", colors[code]);
 					}
 				}
