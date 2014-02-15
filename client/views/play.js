@@ -75,6 +75,10 @@ Template.play.measureButtons = function () {
 	return Session.get('measureButtons') || [];
 };
 
+Template.play.isGamePlaying = function () {
+	return Session.get('isGamePlaying') || false;
+};
+
 function secondlyUpdate(y, fn)
 {
 	// console.log("yolo");
@@ -118,7 +122,33 @@ var measuresList = [
 	{ id: 15, name: 'Invest in green technology' }
 ];
 
+var gameTicker;
+
 var playEventsMap = {
+	'click #start': function () {
+		gameTicker = Meteor.setInterval(function() {
+			secondlyUpdate("yolo");
+		}, 1000);
+
+		Session.set('isGamePlaying', true);
+	},
+
+	'click #pause': function () {
+
+		// Pause the game if it is playing
+		if (gameTicker) {
+			Meteor.clearInterval(gameTicker);
+		}
+
+		// Save the game state
+		var currentWorld = Worlds.findOne({ player: Meteor.userId() });
+		Worlds.update({ _id: currentWorld._id }, { $set: {
+			state: simplify()
+		} });
+
+		Session.set('isGamePlaying', false);
+	},
+
 	'click #progress-social': function () {
 		Session.set('measureButtons', measuresList.slice(8, 12));
 	},

@@ -8,6 +8,9 @@
 		{{/constant}}
 		</div>
 		<div class="col-md-4">
+			<button id="start" class="btn btn-primary {{#if isGamePlaying}}hidden{{/if}}">Start/Resume Game</button>
+			<button id="pause" class="btn btn-warning {{#unless isGamePlaying}}hidden{{/unless}}">Pause Game</button>
+
 			<div>
 				<h5> SHEL </h5>
 				<div class="well">
