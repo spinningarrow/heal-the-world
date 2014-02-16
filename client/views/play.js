@@ -89,7 +89,7 @@ Template.play.literacy = function () {
 };
 
 Template.play.measureButtons = function () {
-	return Session.get('measureButtons') || [];
+	return Session.get('measureButtons') || measuresList.slice(8, 12);
 };
 
 Template.play.isGamePlaying = function () {
