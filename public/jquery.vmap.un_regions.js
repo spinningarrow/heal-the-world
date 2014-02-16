@@ -374,7 +374,6 @@ updateColours = function updateColours (data)
 		var health = data[regionKey];
 		var region = regionMap[regionKey];
 		var countries = region["countries"];
-		var red =
 		for (cc in countries)
 		{
 			colors[countries[cc]] = '#';
