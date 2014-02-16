@@ -142,3 +142,21 @@ footer.footer {
     border-top: 1px solid #eee;
    	margin-top: 1em;
 }
+
+#play {
+	margin-top: 0.5em;
+	width: 324px;
+}
+
+
+.btn-trans {
+	background: none;
+}
+
+.cover-heading {
+	font-size: 3.5em;
+}
+
+.lead {
+	margin: 1em;
+}
