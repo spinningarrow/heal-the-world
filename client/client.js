@@ -9,11 +9,13 @@ Router.map(function () {
 		before: function () {
 			if (Meteor.user()) {
 				if (Meteor.user().profile.role === 'player') {
-					Router.go('/play');
+					// Router.go('/play');
+					location.href = '/play';
 				}
 
 				else if (Meteor.user().profile.role === 'agency') {
-					Router.go('/agency-signup');
+					// Router.go('/agency-signup');
+					location.href = '/agency-signup';
 				}
 			}
 		}
