@@ -9,6 +9,7 @@ Template.layout.fbUsername = function () {
 Template.layout.events({
 	'click #logout': function () {
 		Meteor.logout();
+		Session.set('currentUserType', null);
 		Router.go('index');
 	}
 });

@@ -8,12 +8,14 @@ Router.map(function () {
 		template: 'index',
 		before: function () {
 			if (Meteor.user()) {
-				if (Meteor.user().profile.role === 'player') {
+				// if (Meteor.user().profile.role === 'player') {
+				if (Session.get('currentUserType') === 'player') {
 					// Router.go('/play');
 					location.href = '/play';
 				}
 
-				else if (Meteor.user().profile.role === 'agency') {
+				// else if (Meteor.user().profile.role === 'agency') {
+				if (Session.get('currentUserType') === 'agency') {
 					// Router.go('/agency-signup');
 					location.href = '/agency-signup';
 				}

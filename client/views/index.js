@@ -19,12 +19,14 @@ Template.index.events({
 					});
 				}
 
+				Session.set('currentUserType', 'agency');
 				Router.go('/agency-signup');
 			});
 		} else {
+
+			Session.set('currentUserType', 'agency');
 			Router.go('/agency-signup');
 		}
-
 	},
 
 	'click #play': function () {
@@ -69,9 +71,11 @@ Template.index.events({
 					complexify(userWorld.state);
 				}
 
+				Session.set('currentUserType', 'player');
 				Router.go('/play');
 			});
 		} else {
+			Session.set('currentUserType', 'player');
 			Router.go('/play');
 		}
 	},
