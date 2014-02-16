@@ -408,7 +408,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -764,7 +764,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -1119,7 +1119,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -1474,7 +1474,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -1829,7 +1829,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -2184,7 +2184,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -2539,7 +2539,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -2894,7 +2894,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -3249,7 +3249,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -3604,7 +3604,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -3959,7 +3959,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -4314,7 +4314,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -4669,7 +4669,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -5024,7 +5024,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -5379,7 +5379,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -5734,7 +5734,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
@@ -6089,7 +6089,7 @@ worldState = {
 			var val = 0;
 			for(var kpiIndex in this.kpis) {
 				var kpi = this.kpis[kpiIndex];
-				val += this.kpi.count();
+				val += kpi.count();
 			}
 			return val;
 		},
