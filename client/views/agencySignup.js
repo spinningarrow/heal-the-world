@@ -11,6 +11,7 @@ Template.agencySignup.events({
 		// event.preventDefault();
 
 		var formData = {
+			name: template.find('#name').value,
 			bio: template.find('#bio').value,
 			website: template.find('#website').value,
 			facebook: template.find('#facebook').value,
@@ -22,10 +23,28 @@ Template.agencySignup.events({
 			}
 		};
 
-		Agencies.insert({
-			owner: Meteor.userId(),
-			data: formData
+		var agency = Agencies.findOne({
+			owner: Meteor.userId()
 		});
+
+		if (!agency) {
+			Agencies.insert({
+				owner: Meteor.userId(),
+				data: formData
+			});
+		}
+
+		else {
+			Agencies.update({
+				_id: agency._id
+			}, {
+				$set: {
+					data: formData
+				}
+			});
+		}
+
+
 
 		console.log('form submitted');
 	}
