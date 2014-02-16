@@ -93,7 +93,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -170,7 +170,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -259,7 +259,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -336,7 +336,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -449,7 +449,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -526,7 +526,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -614,7 +614,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -691,7 +691,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -805,7 +805,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -882,7 +882,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -970,7 +970,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1047,7 +1047,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1160,7 +1160,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1237,7 +1237,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1325,7 +1325,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1402,7 +1402,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1515,7 +1515,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1592,7 +1592,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1680,7 +1680,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1757,7 +1757,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1870,7 +1870,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -1947,7 +1947,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2035,7 +2035,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2112,7 +2112,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2225,7 +2225,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2302,7 +2302,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2390,7 +2390,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2467,7 +2467,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2580,7 +2580,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2657,7 +2657,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2745,7 +2745,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2822,7 +2822,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -2935,7 +2935,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3012,7 +3012,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3100,7 +3100,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3177,7 +3177,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3290,7 +3290,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3367,7 +3367,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3455,7 +3455,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3532,7 +3532,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3645,7 +3645,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3722,7 +3722,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3810,7 +3810,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -3887,7 +3887,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4000,7 +4000,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4077,7 +4077,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4165,7 +4165,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4242,7 +4242,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4355,7 +4355,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4432,7 +4432,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4520,7 +4520,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4597,7 +4597,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4710,7 +4710,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4787,7 +4787,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4875,7 +4875,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -4952,7 +4952,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5065,7 +5065,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5142,7 +5142,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5230,7 +5230,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5307,7 +5307,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5420,7 +5420,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5497,7 +5497,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5585,7 +5585,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5662,7 +5662,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5775,7 +5775,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5852,7 +5852,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -5940,7 +5940,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -6017,7 +6017,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -6130,7 +6130,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -6207,7 +6207,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -6295,7 +6295,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
@@ -6372,7 +6372,7 @@ worldState = {
 			"count": function() {
 				var count = 0;
 				for(var measureIndex in this.measures){
-					count += this.measures[measureIndex];
+					count += this.measures[measureIndex].count;
 				}
 				return count;
 			},
