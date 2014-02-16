@@ -97,7 +97,7 @@ Template.play.isGamePlaying = function () {
 };
 
 Template.play.tickerMessage = function () {
-	return Session.get('implementationResult') || 'Default message, yo!';
+	return Session.get('implementationResult') || 'Heal the World, make it a better place';
 };
 
 Template.play.resource = function () {
