@@ -11,6 +11,7 @@ Template.agencySignup.events({
 		// event.preventDefault();
 
 		var formData = {
+			name: template.find('#name').value,
 			bio: template.find('#bio').value,
 			website: template.find('#website').value,
 			facebook: template.find('#facebook').value,
