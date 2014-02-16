@@ -6436,6 +6436,7 @@ implementMeasure = function implementMeasure (regionId, measureId) {
 			var cost = measure.cost();
 			if(worldState.resource >= cost) {
 				worldState.resource -= cost;
+				measure.count++;
 				if(measure.currVal < 0.9){
 					measure.currVal += 0.1;
 					message += getMessage(measureId, regionId);
