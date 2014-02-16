@@ -155,6 +155,12 @@ var playEventsMap = {
 
 		// Reset game state
 		complexify(defaultWorld);
+
+		// Save the game state
+		var currentWorld = Worlds.findOne({ player: Meteor.userId() });
+		Worlds.update({ _id: currentWorld._id }, { $set: {
+			state: simplify()
+		} });
 	},
 
 	'click #progress-social': function () {
