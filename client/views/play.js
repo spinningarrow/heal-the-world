@@ -105,8 +105,8 @@ Template.play.resource = function () {
 };
 
 Template.play.xp = function () {
-	return 1;
-	// return worldState.xp();
+	// return 1;
+	return worldState.xp();
 };
 
 Template.play.world_health = function () {
