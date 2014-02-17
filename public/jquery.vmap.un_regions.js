@@ -314,25 +314,44 @@ regionMap = {
 };
 
 getCountriesInRegion = function getCountriesInRegion(cc) {
-	for (var regionKey in regions)
+	for (var regionKey in regionMap)
 	{
-		var region = regions[regionKey];
-		var countries = region["countries"];
-		// console.log(region.toString());
-		// console.log(countries.toString());
-		for(var countryIndex in countries)
+		var countries = regionMap[regionKey].countries;
+		for (var countryIndex in countries)
 		{
-			// console.log(countryIndex);
-			// console.log(countries[countryIndex].toString());
 			if (cc == countries[countryIndex])
 			{
-				// console.log(countries.toString());
-
 				return countries;
 			}
 		}
 	}
 }
+
+getRegion = function getRegion(cc) {
+	var regionCode = countryMap[cc];
+	return regionMap[regionCode];
+}
+
+highlightRegionOfCountry = function highlightRegionOfCountry (cc) {
+      var countries = getRegion(cc).countries;
+      for (countryIndex in countries)
+      {
+      	$('#vmap').vectorMap('highlight',countries[countryIndex]);
+
+      }
+      $('#vmap').vectorMap('highlight',cc);
+
+    }
+
+unhighlightRegionOfCountry = function unhighlightRegionOfCountry (cc) {
+      var countries = getRegion(cc).countries;
+      for (countryIndex in countries)
+      {
+      	$('#vmap').vectorMap('unhighlight',countries[countryIndex]);
+
+      }
+      $('#vmap').vectorMap('unhighlight',cc);
+    }
 
 selectRegion = function selectRegion (regionCode) {
 
@@ -353,11 +372,6 @@ deselectRegion = function deselectRegion (regionCode) {
 	{
 		$('#vmap').vectorMap('deselect', region.countries[countryIndex]);
 	}
-}
-
-getRegion = function getRegion(cc) {
-	var regionCode = countryMap[cc];
-	return regionMap[regionCode];
 }
 
 updateColours = function updateColours (data)

@@ -89,8 +89,15 @@ Router.map(function () {
 					showTooltip: true,
 					scaleColors: ['#C8EEFF', '#006491'],
 					normalizeFunction: 'polynomial',
-					selectedRegion: 'us',
-					onRegionClick: regionEventFunction
+					onRegionClick: regionEventFunction,
+					onRegionOver : function (element, code, region)
+					{
+						highlightRegionOfCountry(code);
+					},
+					onRegionOut : function (element, code, region)
+					{
+						unhighlightRegionOfCountry(code);
+					}
 				});
 
 				invertedRegionMap = _.clone(regionMap);
